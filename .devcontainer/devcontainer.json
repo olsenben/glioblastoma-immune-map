@@ -1,0 +1,27 @@
+{
+  "name": "glioblastoma",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.analysis.extraPaths": [
+      "${workspaceFolder}/src"
+    ]
+  },
+  "containerEnv": {
+    "PYTHONPATH": "/workspaces/glioblastoma-immune-map"
+  },
+ "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace/,type=bind"
+  ],
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+  "remoteUser": "root"
+}

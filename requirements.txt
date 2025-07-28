@@ -1,0 +1,10 @@
+scanpy
+squidpy
+tangram-sc
+matplotlib
+seaborn
+jupyterlab
+anndata
+numpy
+pandas
+scikit-learn
